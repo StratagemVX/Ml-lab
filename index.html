@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Programs With Copy Buttons</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Text files loaded from this folder</p>
+          <h1>AI programs with copy buttons</h1>
+        </div>
+
+        <div class="header-actions">
+          <label class="upload-button" for="fileInput">Add .txt files</label>
+          <input id="fileInput" type="file" accept=".txt,text/plain" multiple />
+        </div>
+      </header>
+
+      <section class="drop-zone" id="dropZone" aria-label="Drop text files here">
+        <strong>Drop more .txt programs here</strong>
+        <span id="uploadStatus">Loading uploaded text files...</span>
+      </section>
+
+      <p class="message" id="message" role="status" aria-live="polite"></p>
+
+      <section class="program-grid" id="programGrid" aria-label="Program cards"></section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+import pandas as pd
+from sklearn.mixture import GaussianMixture
+from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_score
+
+df = pd.read_csv("iris.csv")
+
+df = df.drop(["Id", "Species"], axis=1)
+
+gmm = GaussianMixture(n_components=3, random_state=42)
+gmm.fit(df)
+
+labels_em = gmm.predict(df)
+
+kmeans = KMeans(n_clusters=3, random_state=42)
+kmeans.fit(df)
+
+labels_kmeans = kmeans.labels_
+
+silhouette_em = silhouette_score(df, labels_em)
+silhouette_kmeans = silhouette_score(df, labels_kmeans)
+
+print("EM Algorithm:")
+print("Silhouette Score:", silhouette_em)
+
+print("\nK-Means Algorithm:")
+print("Silhouette Score:", silhouette_kmeans)
