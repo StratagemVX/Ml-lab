@@ -41,3 +41,19 @@ Open `index.html` in any web browser to access the interactive copy suite.
 - **Institution:** Department of Computer Science & Engineering, MVJ College of Engineering
 - **GitHub:** [https://github.com/StratagemVX](https://github.com/StratagemVX)
 - **Portfolio:** [https://chethan-kumar-portfolio.vercel.app/](https://chethan-kumar-portfolio.vercel.app/)
+
+## Verification and maintenance
+
+Keep this README synchronized with the current project files, dependencies, and execution workflow. Distinguish completed functionality from future work.
+
+### Build and test commands
+
+No root package manifest was available during this pass. Use the repository's actual language-specific dependency manifest and CI configuration.
+
+### Contribution and security notes
+
+- Keep project features, media previews, screenshots, and architecture claims accurate.
+- Do not commit credentials, private keys, personal data, or local environment files.
+- Use placeholder-only examples and deployment-managed secrets.
+- Include steps to reproduce issues and expected/actual results.
+- Run relevant verification checks before merging.
