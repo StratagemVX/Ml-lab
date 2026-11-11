@@ -1,0 +1,30 @@
+name: Quality & Security Checks
+
+on:
+  push:
+    branches: ["main", "maintenance/**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify static site assets and JavaScript syntax
+        run: node tests/verify_site.mjs
+
+      - name: Validate bundled Python program snippets
+        run: |
+          python -c "import ast, pathlib; [ast.parse(p.read_text(encoding='utf-8'), str(p)) for p in sorted(pathlib.Path('.').glob('*.txt'))]"
