@@ -1,43 +1,58 @@
-# Machine Learning & AI Laboratory Programs — MVJ College of Engineering
+# Machine Learning Laboratory Portal (`Ml-lab`) — Python Programs 1 to 10
 
-> An offline-first web portal providing verified, tested Python implementations of foundational machine learning algorithms for the VTU Machine Learning Laboratory curriculum.
+> Static web reference gallery serving 10 Python ML algorithm `.txt` files (`pgm1.txt`–`pgm10.txt`) with Prism.js syntax highlighting, one-click copy buttons, and drag-and-drop `.txt` preview support.
 
+[![HTML5](https://img.shields.io/badge/HTML5-Static%20Site-orange.svg)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![Python](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/)
-[![NumPy](https://img.shields.io/badge/NumPy-1.24%2B-013243.svg)](https://numpy.org/)
-[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.3%2B-F7931E.svg)](https://scikit-learn.org/)
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-NumPy%20%7C%20Pandas-F7931E.svg)](https://scikit-learn.org/)
 
 ---
 
-## Curriculum Overview
+## Executive Overview
 
-An interactive, offline-first web reference suite containing verified Python code and sample datasets for all 10 laboratory programs of the VTU Machine Learning Laboratory curriculum.
+**`Ml-lab`** provides an interactive browser viewer (`index.html`, `script.js`, `style.css`) for 10 VTU/college Machine Learning laboratory Python programs, allowing students to inspect syntax-highlighted code, copy snippets, or drop additional `.txt` files locally.
 
----
-
-## Program Index & Algorithms
-
-1. **Find-S Algorithm (`pgm1.txt`):** Implementation of maximally specific hypothesis learning on tabular training concepts.
-2. **Candidate Elimination Algorithm (`pgm2.txt`):** General-to-specific version space bounding with positive and negative training examples.
-3. **ID3 Decision Tree (`Pgm3.txt`):** Information gain and Shannon entropy calculation for constructing decision trees.
-4. **Backpropagation Neural Network (`pgm4.txt`):** Multi-layer perceptron training utilizing gradient descent error backpropagation.
-5. **Naive Bayes Classifier (`pgm5.txt`):** Probabilistic document and tabular classification based on Bayes' theorem.
-6. **Bayesian Network Inference (`pgm6.txt`):** Directed acyclic graphical modeling for conditional probability distributions.
-7. **K-Nearest Neighbors (`pgm7.txt`):** Instance-based distance-weighted classification on benchmark datasets.
-8. **K-Means Clustering (`pgm8.txt`):** Unsupervised centroid-based clustering on continuous numerical data.
-9. **Expectation Maximization (EM) Algorithm (`pgm9.txt`):** Gaussian Mixture Model probabilistic clustering compared against K-Means.
-10. **Locally Weighted Regression (`pgm10.txt`):** Non-parametric LOWESS curve fitting.
+> **Quality & CI Status (`main` vs. Open Draft PR #2 — `maintenance/repository-quality-improvements`):**
+> - **PR #2** adds `.gitignore`, static HTML/JS/asset verification (`tests/verify_site.mjs`), and `.github/workflows/quality.yml` (Node 20 verification passing in CI alongside local Python syntax checks across all 10 program files).
 
 ---
 
-## Execution Instructions
+## Verified Program Index (`script.js` `bundledPrograms`)
 
-Open `index.html` in any web browser to access the interactive copy suite.
+| File | Topic | Focus |
+|---|---|---|
+| `pgm1.txt` | **Candidate-Elimination** | Learns specific and general hypotheses from training data |
+| `pgm2.txt` | **A\* Search Algorithm** | Shortest-path search using heuristics and priority queue |
+| `Pgm3.txt` | **Simple Linear Regression** | Least-squares linear regression prediction |
+| `pgm4.txt` | **Decision Tree Classification** | Decision tree classifier construction & evaluation |
+| `pgm5.txt` | **Back Propagation** | Neural network regression/prediction experiment |
+| `pgm6.txt` | **Perceptron Learning** | Perceptron training on binary inputs |
+| `pgm7.txt` | **Naive Bayes Classification** | Categorical feature classification |
+| `pgm8.txt` | **Random Forest Classification** | Ensemble classifier trained on the Iris dataset |
+| `pgm9.txt` | **K-Means & GMM Clustering** | Clustering model comparison with silhouette scores |
+| `pgm10.txt` | **K-Nearest Neighbors** | Iris flower sample classification via nearest neighbors |
 
 ---
 
-## Contributor Attribution & Profile
+## Usage & Verification
 
-- **Curator:** Chethan Kumar B S (`StratagemVX`)
-- **Institution:** Department of Computer Science & Engineering, MVJ College of Engineering
+Because `script.js` fetches `pgm1.txt`–`pgm10.txt` via `fetch()`, serve the repository over a local HTTP server rather than `file://`:
+
+```bash
+git clone https://github.com/StratagemVX/Ml-lab.git
+cd Ml-lab
+
+# Serve locally
+python -m http.server 8000
+
+# Verify static structure & asset links (PR #2)
+node tests/verify_site.mjs
+```
+
+---
+
+## Contributor Attribution
+
+- **Curator:** Chethan Kumar B S (`StratagemVX`) — *Archived prototype `StratagemVX/mvjlab` points here as canonical*
 - **GitHub:** [https://github.com/StratagemVX](https://github.com/StratagemVX)
 - **Portfolio:** [https://chethan-kumar-portfolio.vercel.app/](https://chethan-kumar-portfolio.vercel.app/)
